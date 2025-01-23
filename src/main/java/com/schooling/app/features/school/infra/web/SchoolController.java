@@ -2,6 +2,7 @@ package com.schooling.app.features.school.infra.web;
 
 import com.schooling.app.features.school.application.usecase.FindAllSchoolsUseCase;
 import com.schooling.app.features.school.domain.model.School;
+import com.schooling.app.features.school.infra.web.dto.SchoolDto;
 import java.util.List;
 
 public class SchoolController {
