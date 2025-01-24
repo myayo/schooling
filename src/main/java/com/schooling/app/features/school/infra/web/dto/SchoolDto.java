@@ -1,5 +1,5 @@
 package com.schooling.app.features.school.infra.web.dto;
 
-public class SchoolDto {
+public record SchoolDto (String id, String name) {
 
 }

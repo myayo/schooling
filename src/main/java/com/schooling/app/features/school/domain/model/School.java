@@ -1,5 +1,4 @@
 package com.schooling.app.features.school.domain.model;
 
-public class School {
-
+public record School (String id, String name) {
 }

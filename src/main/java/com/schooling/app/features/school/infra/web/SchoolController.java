@@ -4,7 +4,12 @@ import com.schooling.app.features.school.application.usecase.FindAllSchoolsUseCa
 import com.schooling.app.features.school.domain.model.School;
 import com.schooling.app.features.school.infra.web.dto.SchoolDto;
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/schooling/api/v1")
 public class SchoolController {
 
   private FindAllSchoolsUseCase findAllSchoolsUseCase;
@@ -13,8 +18,7 @@ public class SchoolController {
     this.findAllSchoolsUseCase = findAllSchoolsUseCase;
   }
 
-
-
+  @GetMapping("/schools")
   public List<SchoolDto> findAll() {
     return findAllSchoolsUseCase.handle()
         .stream()
@@ -23,7 +27,7 @@ public class SchoolController {
   }
 
   private SchoolDto mapToDto(School school) {
-    return null;
+    return new SchoolDto(school.id(), school.name());
   }
 
 }
