@@ -7,4 +7,10 @@ public interface SchoolStorage {
 
   List<School> findAll();
 
+  School create(School school);
+
+  School update(School school);
+
+  boolean exist(School school);
+
 }
