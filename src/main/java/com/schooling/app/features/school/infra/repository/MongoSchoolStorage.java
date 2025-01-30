@@ -40,9 +40,11 @@ public class MongoSchoolStorage  implements SchoolStorage {
   }
 
   @Override
-  public boolean exist(School school) {
-    return mongoTemplate.exists(Query.query(Criteria.where("_id").is(school.id())),
-        SchoolMongoDto.class);
+  public boolean exist(String id) {
+    return mongoTemplate.exists(
+        Query.query(Criteria.where("_id").is(id)),
+        SchoolMongoDto.class
+    );
   }
 
   private School map(SchoolMongoDto schoolMongoDto) {

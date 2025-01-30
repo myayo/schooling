@@ -11,6 +11,6 @@ public interface SchoolStorage {
 
   School update(School school);
 
-  boolean exist(School school);
+  boolean exist(String id);
 
 }
