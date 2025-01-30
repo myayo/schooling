@@ -6,7 +6,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.schooling.app.features.school.application.usecase.CreateSchoolUseCase;
 import com.schooling.app.features.school.application.usecase.FindAllSchoolsUseCase;
+import com.schooling.app.features.school.application.usecase.UpdateSchoolUseCase;
 import com.schooling.app.features.school.domain.model.School;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -23,6 +25,12 @@ class SchoolControllerTest {
 
   @MockitoBean
   private FindAllSchoolsUseCase findAllSchoolsUseCase;
+
+  @MockitoBean
+  private CreateSchoolUseCase createSchoolUseCase;
+
+  @MockitoBean
+  private UpdateSchoolUseCase updateSchoolUseCase;
 
   @Test
   void should_find_all_schools_using_findAllSchoolsUseCase() throws Exception {
